@@ -1,35 +1,55 @@
 // Initialize Parse app
+Parse.initialize("gipUxgHC0rcHwHU0dlmfcDthZ6TovT9kBSv4VxNS", "Ccyt1ESjabNyloygmsQdb2C79C5V2w9stZrQ08bB")
 
+// // Create a new sub-class of the Parse.Object, with name "Music"
+// var Music = Parse.Object.extend('Music')
 
-// Create a new sub-class of the Parse.Object, with name "Music"
+// // Create a new instance of your Music class 
+// var sweetTime = new Music()
 
+// // Set a property 'band' equal to a band name
+// sweetTime.set('band', 'Sum 41')
 
-// Create a new instance of your Music class 
-
-
-// Set a property 'band' equal to a band name
-
-
-// Set a property 'website' equal to the band's website
-
+// // Set a property 'website' equal to the band's website
+// sweetTime.set('website', 'sum41.org')
     
-// Set a property 'song' equal to a song
+// // Set a property 'song' equal to a song
+// sweetTime.set('song', 'all of them')
+
+// // Save your instance of your song -- and go see it on parse.com!
 
 
-// Save your instance of your song -- and go see it on parse.com!
-
+// sweetTime.save()
 
 // Click event when form is submitted
 $('form').submit(function() {
 
 	// Create a new instance of your Music class 
+	var instance = new Music
 
+	$(this).find("input").each(function() {
+		instance.set($(this).attr('id'), $(this).val())
+		$(this).val(' ')
+	})
 
-	// For each input element, set a property of your new instance equal to the input's value
+	// // For each input element, set a property of your new instance equal to the input's value
 
+	// var band = $("#bandName").val()
+	// var web = $("#website").val()
+	// var song = $("#bestSong").val()
 
-	// After setting each property, save your new instance back to your database
+	// funTune.set(bandName, band)
+	// funTune.set('website', web)
+	// funTune.set('bestSong', song)
 
+	// // After setting each property, save your new instance back to your database
+	// funTune.save()
+	
+	// // Clear it out!
+
+	// $('#bandName').val('')
+	// $('#website').val('')
+	// $('#bestSong').val('')
 	
 	return false
 })
